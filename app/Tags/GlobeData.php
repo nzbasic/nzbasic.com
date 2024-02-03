@@ -20,16 +20,20 @@ class GlobeData extends Tags
             $countriesCsv = Storage::disk('local')->get('countries.csv');
             $countryData = collect(explode("\n", $countriesCsv))
                 ->map(function ($line) {
-                    [$id, $abbreviation, $name, $latitude, $longitude] = explode(',', $line);
+                    try {
+                        [$id, $abbreviation, $name, $latitude, $longitude] = explode(',', $line);
 
-                    return [
-                        'id' => (int) $id,
-                        'abbreviation' => $abbreviation,
-                        'name' => $name,
-                        'latitude' => (float) $latitude,
-                        'longitude' => (float) $longitude,
-                    ];
-                })->splice(1);
+                        return [
+                            'id' => (int) $id,
+                            'abbreviation' => $abbreviation,
+                            'name' => $name,
+                            'latitude' => (float) $latitude,
+                            'longitude' => (float) $longitude,
+                        ];
+                    } catch (\Exception $e) {
+                        return null;
+                    }
+                })->filter(fn ($item) => $item !== null)->splice(1);
 
             $analytics = cloudflare()->getAnalytics();
 
