@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('app:fetch-strava-activities')->everyFiveMinutes();
 
-        $schedule->exec('php please static:warm')->everyHour();
+        $schedule->exec('php please static:warm')->hourly();
     }
 
     /**
