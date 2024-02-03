@@ -1,0 +1,95 @@
+title: Article
+fields:
+  -
+    handle: article
+    field:
+      buttons:
+        - h1
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - quote
+        - removeformat
+        - anchor
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: true
+      fullscreen: true
+      allow_source: true
+      type: bard
+      localizable: true
+      listable: hidden
+      display: Article
+      replicator_preview: false
+      validate:
+        - required
+      sets:
+        interactive:
+          display: Interactive
+          instructions: 'Interactive sets.'
+          icon: programming-script-code
+          sets:
+            buttons:
+              display: Buttons
+              instructions: 'Add one or multiple buttons.'
+              icon: link
+              fields:
+                -
+                  import: buttons
+        text:
+          display: Text
+          instructions: 'Text based sets.'
+          icon: text-formatting-initial-letter
+          sets:
+            pull_quote:
+              display: 'Pull quote'
+              instructions: 'Add a pull quote with an optional author.'
+              icon: text-formatting-quotation
+              fields:
+                -
+                  import: pull_quote
+            table:
+              display: Table
+              instructions: 'Add a data table with headers, rows and columns.'
+              icon: layout-grid-dots
+              fields:
+                -
+                  import: table
+        image_video:
+          display: 'Image & video'
+          instructions: "Sets with images or embeddable video's."
+          icon: media-image-camera
+          sets:
+            image:
+              display: Image
+              instructions: 'Add a single image with an optional caption.'
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: image
+            video:
+              display: Video
+              instructions: 'Add a YouTube or Vimeo video with an optional caption.'
+              icon: media-webcam-video
+              fields:
+                -
+                  import: video
+      container: files
+      enable_input_rules: true
+      enable_paste_rules: true
+      instructions_position: above
+      visibility: visible
+      always_save: false
+      previews: true
+      antlers: false
+      remove_empty_nodes: trim
+      collapse: false
+      smart_typography: true
+      inline: false
+      hide_display: false

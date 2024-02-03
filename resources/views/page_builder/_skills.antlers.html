@@ -1,0 +1,44 @@
+<div class="flex flex-col gap-4">
+    <h2>{{ title }}</h2>
+
+    <react-component
+        class="xl:block hidden w-full h-96"
+        component="technology-chart"
+        data="{{ {collection:skills} | to_json | entities }}"
+    ></react-component>
+
+    <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-2">
+            <p>Key</p>
+
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">   
+                    <div class="bg-[#4fa7e8] w-4 h-4"></div>
+                    <p class="text-xs">Experience</p>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <div class="bg-[#c0daed] w-4 h-4"></div>
+                    <p class="text-xs">Enjoyment</p>
+                </div>
+            </div>
+        </div>
+
+
+        {{ collection:skills as="skills" }}
+            {{ skills group_by="type" }}
+                {{ groups }}
+                    <div class="flex flex-col">
+                        <p>{{ group | ucfirst }}</p>
+
+                        <react-component
+                            component="enjoyment-chart"
+                            data="{{ items | sort('experience', 'desc') | to_json | entities }}"
+                            class="w-full"
+                        ></react-component>
+                    </div>
+                {{ /groups }}
+            {{ /skills }}
+        {{ /collection:skills }}
+    </div>
+</div>

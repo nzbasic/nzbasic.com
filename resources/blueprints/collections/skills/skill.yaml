@@ -1,0 +1,79 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: logo
+            field:
+              max_files: 1
+              mode: list
+              container: images
+              restrict: true
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: Logo
+              listable: true
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              folder: icons
+          -
+            handle: experience
+            field:
+              min: 0
+              max: 11
+              step: 1
+              type: range
+              display: Experience
+              listable: true
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: enjoyment
+            field:
+              min: 0
+              max: 11
+              step: 1
+              type: range
+              display: Enjoyment
+              listable: true
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: type
+            field:
+              options:
+                language: Language
+                framework: Framework
+                library: Library
+                other: Other
+              taggable: false
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              type: select
+              display: Type
+              listable: true
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+title: Skill

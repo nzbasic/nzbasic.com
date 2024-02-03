@@ -1,0 +1,53 @@
+<div class="flex flex-col gap-4">
+    <h2>{{ title }}</h2>
+
+    {{ strava_data }}
+        <div class="flex flex-col gap-4">
+            <div class="flex flex-col">
+                <p>Total ran: {{ total_distance }}</p>
+                <p>Total ran (past month): {{ total_distance_month }}</p>
+
+                {{ last_run }}
+                    <div class="flex flex-col md:flex-row gap-0 md:gap-2">
+                        <p>Last run:</p>
+                        {{ partial:components/run }}
+                    </div>
+                    
+                {{ /last_run }}
+            </div>
+
+            <div x-data="{ active: 'all' }" class="flex flex-col">
+                <div class="flex flex-col md:flex-row items-start md:items-center md:gap-4">
+                    <p>Best runs</p>
+                    <p class="hidden md:block">—</p>
+                    <div class="flex items-center gap-2">
+                        {{ top }}
+                            <button
+                                class="hover:font-bold"
+                                :class="{ 'font-bold': active === '{{ value }}'}" \
+                                @click="active = '{{ value }}'"
+                            >
+                                {{ title }}
+                            </button>
+                            {{ if !last }}
+                                <p>·</p>
+                            {{ /if }}
+                        {{ /top }}
+                    </div>
+                    
+                </div>
+                {{ top }}
+                    <div x-show="active === '{{ value }}'">
+                        <ul>
+                            {{ runs }}
+                                <li>
+                                    {{ partial:components/run }}
+                                </li>
+                            {{ /runs }}
+                        </ul>
+                    </div>
+                {{ /top }}
+            </div>
+        </div>
+    {{ /strava_data }}
+</div>

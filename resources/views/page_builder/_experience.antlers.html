@@ -1,0 +1,13 @@
+<div class="flex justify-between">
+    <div class="flex flex-col gap-4">
+        <h2>{{ title }}</h2>
+        {{ collection:jobs }}
+            <div class="flex flex-col">
+                <a class="hover:underline" href="{{ link }}">{{ title }}</a>
+                {{ description }}
+            </div>
+        {{ /collection:jobs }}
+    </div>
+
+    <img src="/images/grouped.png" alt="Grouped" class="w-[204px] h-[238px] lg:w-[264px] lg:h-[308px] hidden md:block">
+</div>

@@ -1,0 +1,49 @@
+title: Hero
+fields:
+  -
+    handle: title
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Title
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: subtitle
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: Subtitle
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: description
+    field:
+      antlers: false
+      type: textarea
+      display: Description
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false
+  -
+    handle: globe_text
+    field:
+      input_type: text
+      antlers: false
+      type: text
+      display: 'Globe Text'
+      listable: hidden
+      instructions_position: above
+      visibility: visible
+      replicator_preview: true
+      hide_display: false

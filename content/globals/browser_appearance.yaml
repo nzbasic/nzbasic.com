@@ -1,0 +1,8 @@
+title: 'Browser appearance'
+data:
+  disable_telephone_detection: false
+  disable_email_detection: false
+  disable_address_detection: false
+  display_standalone: false
+  use_theme_color: false
+  use_favicons: false

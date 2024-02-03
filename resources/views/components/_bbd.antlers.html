@@ -1,0 +1,49 @@
+<div
+    x-data="{
+        status: null,
+        interval: null,
+        async retrieveData() {
+            this.status = await (await fetch('https://v2.nzbasic.com/v2/metrics')).json()
+        },
+        init() {
+            this.retrieveData()
+
+            this.interval = setInterval(() => {
+                this.retrieveData()
+            }, 3000)
+        },
+        destroy() {
+            clearInterval(this.interval)
+        },
+        bytesToFileSize(bytes) {
+            if (bytes === 0) {
+              return 'N/A';
+            }
+          
+            const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(1024));
+            return `${(bytes / Math.pow(1024, i)).toFixed(2)} ${sizes[i]}`;
+        }
+    }"
+    class="flex flex-col gap-4"
+>
+    <p>Live API Status</p>
+    <p x-show="status == null">Loading...</p>
+
+    <template x-if="status != null">
+        <div>
+            <p>Current</p>
+            <ul>
+                <li x-text="(status.Download.CurrentBandwidthUsage / 1e6).toFixed(1) + 'MB/s current usage'"></li>
+                <li x-text="(status.Download.CurrentDownloads?.length ?? 0) + ' active download(s)'"></li>
+            </ul>
+            
+            <p class="mt-4">Today (24h)</p>
+            <ul>
+                <li x-text="status.Download.DailyStats.Maps + ' sets downloaded'"></li>
+                <li x-text="bytesToFileSize(status.Download.DailyStats.Size) + ' served'"></li>
+                <li x-text="status.Download.DailyStats.Completed + ' happy users'"></li>
+            </ul>
+        </div>
+    </template>
+</div>

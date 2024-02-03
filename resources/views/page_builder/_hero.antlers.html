@@ -1,0 +1,27 @@
+<div class="container mx-auto flex flex-col gap-20 items-center w-full">
+    <div class="flex flex-col items-center gap-2">
+        <h1>{{ title }}</h1>
+
+        {{ if subtitle }}
+            <h2>{{ subtitle }}</h2>
+        {{ /if }}
+
+        {{ if description }}
+            <p>{{ description }}</p>
+        {{ /if }}
+    </div>
+
+    <div class="flex flex-col items-center gap-8">
+        {{ globe_data }}
+            <react-component
+                component="globe"
+                countries='{{ countries | to_json | entities }}'
+                topology='{{ topology | to_json | entities }}'
+                class="h-72 w-72 md:h-96 md:w-96"
+            >
+            </react-component>
+
+            <h3>{{ globe_text }}</h3>
+        {{ /globe_data }}
+    </div>
+</div>

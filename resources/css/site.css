@@ -1,0 +1,86 @@
+@import "tailwindcss/base";
+@import "custom";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+h1 {
+    @apply text-5xl;
+}
+
+h2 {
+    @apply text-3xl
+}
+
+ul {
+    @apply list-disc list-outside pl-4;
+}
+
+.hide-first > line:nth-child(1) {
+    display: none;
+}
+
+/* Custom fonts */
+
+@font-face {
+    font-family: "Geist";
+    src: url("/public/fonts/Geist-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Geist";
+    src: url("/public/fonts/Geist-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Geist";
+    src: url("/public/fonts/Geist-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Geist";
+    src: url("/public/fonts/Geist-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GeistMono";
+    src: url("/public/fonts/GeistMono-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GeistMono";
+    src: url("/public/fonts/GeistMono-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "GeistMono";
+    src: url("/public/fonts/GeistMono-UltraLight.woff2") format("woff2");
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+}
+
+.font-geist {
+    font-family: "Geist", sans-serif;
+}
+
+.font-geist-mono {
+    font-family: "GeistMono", monospace;
+}

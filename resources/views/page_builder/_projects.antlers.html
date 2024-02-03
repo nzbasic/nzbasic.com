@@ -1,0 +1,55 @@
+<div class="flex flex-col gap-4">
+    <h2>{{ title }}</h2>
+    <div class="flex flex-col gap-12">
+        {{ collection:projects }}
+            <div class="grid grid-cols-1 lg:grid-cols-[4fr_3fr]">
+                <div class="lg:pr-8 lg:border-r border-black [&>ul>li>a]:underline">
+                    <div class="flex items-center gap-2">
+                        <p class="font-bold text-lg lg:max-w-sm">
+                            {{ title }}
+                        </p>
+                        {{ if github }}
+                            <a href="{{ github }}" class="text-sm">
+                                <img src="/images/icons/brand-github.svg" alt="Github" class="w-6 h-6">
+                            </a>
+                        {{ /if }}
+                    </div>
+
+                    {{ content }}
+                </div>
+
+                <div class="flex flex-col gap-4 pt-4 lg:pt-0 lg:pl-8">
+                    {{ if title === "Batch Beatmap Downloader" }}
+                        {{ partial:components/bbd }}
+                    {{ /if }}
+
+                    <div>
+                        <p>Screenshots</p>
+                        <div class="flex flex-col" x-data="{ index: 0 }">
+                            {{ images }}
+                                <img
+                                    x-show="index === {{ index }}" 
+                                    src="{{ url }}"
+                                    alt="{{ alt }}"
+                                    class="w-full border border-black object-cover"
+                                >
+                            {{ /images }}
+    
+                            <div class="flex justify-evenly gap-2">
+                                {{ images }}
+                                    <button
+                                        @click="index = {{ index }}"
+                                        class="group hover:cursor w-full pt-2 pb-4" 
+                                    >
+                                        <div class="w-full h-[2px] bg-black group-hover:bg-function" :class="{ 'bg-function': index === {{ index }}}"></div>
+                                    </button>
+                                {{ /images }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    {{ /collection:projects }}
+    </div>
+    
+</div>

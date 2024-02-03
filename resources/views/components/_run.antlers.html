@@ -1,0 +1,5 @@
+{{ $hours = {elapsed_time / 3600} }}
+{{ $minutes = {elapsed_time / 60} % 60 }}
+{{ $seconds = {elapsed_time % 60} }}
+
+<p>{{ (distance /1000) | format_number(1, '.', ",") }}km in {{ hours | floor }}h{{ minutes | floor }}m @ {{ location }}</p>

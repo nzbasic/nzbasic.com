@@ -1,0 +1,102 @@
+title: 'Page builder'
+fields:
+  -
+    handle: page_builder
+    field:
+      type: replicator
+      localizable: true
+      hide_display: true
+      collapse: true
+      listable: false
+      display: 'Page builder'
+      sets:
+        interactive:
+          display: Interactive
+          instructions: 'Interactive blocks.'
+          icon: programming-script-code
+          sets:
+            form:
+              display: Form
+              instructions: 'Select and render a form.'
+              icon: mail-chat-bubble-text
+              fields:
+                -
+                  import: form
+            cards:
+              display: Cards
+              instructions: 'Show linkable cards with text.'
+              icon: link
+              fields:
+                -
+                  import: cards
+        text:
+          display: Text
+          instructions: 'Text based blocks.'
+          icon: text-formatting-initial-letter
+          sets:
+            article:
+              display: Article
+              instructions: 'Long form content, can be expanded with media like figures, video, quotes or tables.'
+              icon: text-formatting-image-bottom
+              fields:
+                -
+                  import: article
+        sections:
+          display: Sections
+          instructions: null
+          icon: null
+          sets:
+            hero:
+              display: Hero
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: hero
+            projects:
+              display: Projects
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: projects
+            skills:
+              display: Skills
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: skills
+            experience:
+              display: Experience
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: experience
+            education:
+              display: Education
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: education
+            contact:
+              display: Contact
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: contact
+            running:
+              display: Running
+              instructions: null
+              icon: null
+              fields:
+                -
+                  import: running
+      instructions_position: above
+      visibility: visible
+      previews: true
+      replicator_preview: true
+      fullscreen: true

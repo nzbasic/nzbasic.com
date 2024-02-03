@@ -1,0 +1,40 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: refresh_token
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Refresh Token'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: access_token
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Access Token'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: expires_at
+            field:
+              type: integer
+              display: 'Expires at'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
