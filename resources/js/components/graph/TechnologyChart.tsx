@@ -24,7 +24,7 @@ type StatamicSkills = {
 const x = (d: TechnologyEnjoyment) => d.experience;
 const y = (d: TechnologyEnjoyment) => d.enjoyment;
 
-const r = 15;
+const r = 24;
 let tooltipTimeout: number;
 let index = 0;
 
@@ -157,8 +157,8 @@ export const TechnologyChart = ({
                                 <image
                                     className="stroke-blue-500"
                                     href={imageUrl}
-                                    width={48}
-                                    height={48}
+                                    width={r*2}
+                                    height={r*2}
                                 />
                             </pattern>
                         </React.Fragment>
@@ -169,10 +169,10 @@ export const TechnologyChart = ({
                     {data.map((point, i) =>
                         <rect
                             key={i}
-                            x={xScale(x(point)) - r * 1.5}
-                            y={yScale(y(point)) - r * 1.5}
-                            width={96}
-                            height={96}
+                            x={xScale(x(point)) - r}
+                            y={yScale(y(point)) - r}
+                            width={r*2}
+                            height={r*2}
                             fill={`url(#img-${i})`}
                         />
                     )}
