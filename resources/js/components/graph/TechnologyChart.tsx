@@ -157,8 +157,8 @@ export const TechnologyChart = ({
                                 <image
                                     className="stroke-blue-500"
                                     href={imageUrl}
-                                    width={r * 3}
-                                    height={r * 3}
+                                    width={48}
+                                    height={48}
                                 />
                             </pattern>
                         </React.Fragment>
@@ -171,10 +171,9 @@ export const TechnologyChart = ({
                             key={i}
                             x={xScale(x(point)) - r * 1.5}
                             y={yScale(y(point)) - r * 1.5}
-                            width={r * 3}
-                            height={r * 3}
+                            width={96}
+                            height={96}
                             fill={`url(#img-${i})`}
-                            strokeWidth={2}
                         />
                     )}
                 </Group>

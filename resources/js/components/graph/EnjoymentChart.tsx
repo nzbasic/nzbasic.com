@@ -88,7 +88,7 @@ export function EnjoymentChart({
                         tickLineProps={{ visibility: "hidden" }}
                         tickComponent={({ formattedValue, ...tickProps }) => {
                             const matched = data.find(d => d.title === formattedValue);
-                            const width = 30;
+                            const width = 24;
 
                             return (
                                 <svg x={0} y="0.25em" fontSize="10" className="overflow-visible">
