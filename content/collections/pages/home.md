@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: Home
-updated_by: 01bed536-d637-44df-bc5a-0da8858e2395
-updated_at: 1706948259
+updated_by: 3eed5666-de25-4ec1-98bc-061d7018f19f
+updated_at: 1707084096
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -44,4 +44,6 @@ page_builder:
     content: '- Email: jamescoppard024@gmail.com'
     type: contact
     enabled: true
+seo_description: 'My portfolio'
+og_description: 'My portfolio'
 ---
