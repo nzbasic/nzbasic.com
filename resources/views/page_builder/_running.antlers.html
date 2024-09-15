@@ -12,9 +12,14 @@
                         <p>Last run:</p>
                         {{ partial:components/run }}
                     </div>
-                    
                 {{ /last_run }}
             </div>
+
+            <react-component
+                class="w-full"
+                component="heatmap"
+                data="{{ runs | to_json | entities }}"
+            ></react-component>
 
             <div x-data="{ active: 'all' }" class="flex flex-col">
                 <div class="flex flex-col md:flex-row items-start md:items-center md:gap-4">

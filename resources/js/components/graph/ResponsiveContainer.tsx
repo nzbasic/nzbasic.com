@@ -19,7 +19,7 @@ export const ResponsiveContainer = ({
 }: ResponsiveContainerProps) => {
     return (
         <div className={className}>
-            <ParentSize ignoreDimensions={["top", "left"]}>
+            <ParentSize ignoreDimensions={["top", "left", "height"]}>
                 {({ width, height }) =>
                     React.cloneElement(children, { width, height })
                 }

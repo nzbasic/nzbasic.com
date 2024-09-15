@@ -51,3 +51,16 @@ export interface CFAnalytics {
     longitude: number;
   }[]
 }
+
+export interface StravaRun {
+    id: string;
+    blueprint: string;
+    location: string;
+    distance: number;
+    date: string;
+    timezone: string;
+    moving_time: number;
+    elapsed_time: number;
+    total_elevation_gain: number;
+    strava_id: number;
+}

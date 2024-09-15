@@ -56,6 +56,11 @@ class StravaApiClient
 
             $body = $response->json();
 
+            if (! $body) {
+                logger()->error('Failed to refresh token', ['response' => $response->body()]);
+                throw new \Exception('Failed to refresh token');
+            }
+
             $variables->set('expires_at', $body['expires_at']);
             $variables->set('access_token', $body['access_token']);
             $variables->set('refresh_token', $body['refresh_token']);

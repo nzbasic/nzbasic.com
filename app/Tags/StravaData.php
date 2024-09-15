@@ -34,6 +34,7 @@ class StravaData extends Tags
             'last_run' => $lastRun->toArray(),
             'total_distance' => number_format($totalDistance, 1).'km',
             'total_distance_month' => number_format($totalDistanceMonth, 1).'km',
+            'runs' => $runs->toArray(),
         ];
     }
 }

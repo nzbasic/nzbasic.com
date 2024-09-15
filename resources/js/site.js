@@ -7,12 +7,14 @@ import precognition from 'laravel-precognition-alpine';
 import { ResponsiveGlobe } from './components/globe/Globe';
 import { createRoot } from 'react-dom/client';
 import { ResponsiveTechnologyChart } from './components/graph/TechnologyChart'
-import { EnjoymentChart, ResponsiveEnjoymentChart } from './components/graph/EnjoymentChart'
+import { ResponsiveEnjoymentChart } from './components/graph/EnjoymentChart'
+import { ResponsiveHeatmapChart } from './components/graph/HeatmapChart'
 
 const components = {
     'globe': ResponsiveGlobe,
     'technology-chart': ResponsiveTechnologyChart,
     'enjoyment-chart': ResponsiveEnjoymentChart,
+    'heatmap': ResponsiveHeatmapChart,
 }
 
 window.customElements.define('react-component', class extends HTMLElement {
