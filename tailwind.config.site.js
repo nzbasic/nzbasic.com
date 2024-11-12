@@ -15,6 +15,7 @@ module.exports = {
     // Here we define the default colors available. If you want to include
     // all default Tailwind colors you should extend the colors instead.
     colors: {
+      background: '#F7F6F4',
       black:   '#000',
       white:  '#fff',
       // Neutrals: neutral colors, with a default fallback if you don't need shades. Always set a DEFAULT when you use shades.

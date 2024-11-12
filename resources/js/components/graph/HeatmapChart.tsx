@@ -3,7 +3,6 @@ import { timeDays, timeMonths, timeWeek, timeYear } from "d3-time";
 import { Group } from "@visx/group";
 import { timeFormat } from "d3-time-format";
 import { scaleLinear } from "@visx/scale";
-import max from "lodash/max";
 import { useTooltip, useTooltipInPortal } from "@visx/tooltip";
 import { localPoint } from "@visx/event";
 import cn from "classnames";
@@ -200,7 +199,7 @@ function Calendar({ data, width = 0 }: Props) {
                     <Group
                         fill="none"
                         style={{ strokeWidth: outlineWidth }}
-                        className="stroke-secondary"
+                        className="stroke-[#44403C]"
                         top={outlineWidth / 2 + 1}
                     >
                         {yearMonths.map((firstOfMonth) => (
