@@ -3,8 +3,10 @@
 ## Installation instructions
 
 1. run `composer install`
-2. run `php please make:user`
-3. run `npm i` && `npm run dev`
+2. run `cp .env.example .env`
+3. run `php key:generate`
+4. run `php please make:user`
+5. run `npm i` && `npm run dev`
 
 ## Environment file contents
 

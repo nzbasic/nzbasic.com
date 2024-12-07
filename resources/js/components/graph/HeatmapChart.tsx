@@ -52,7 +52,7 @@ function Calendar({ data, width = 0 }: Props) {
         [data]
     );
 
-    const outlineWidth = width > 768 ? 4 : 2;
+    const outlineWidth = width > 768 ? 2 : 1;
     const cellWidth = (width - outlineWidth) / 53;
     const height = cellWidth * 7;
 

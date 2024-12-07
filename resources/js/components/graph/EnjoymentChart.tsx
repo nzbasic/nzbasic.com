@@ -29,7 +29,7 @@ export function EnjoymentChart({
 
     const nameScale = scaleBand({
         domain: data.map(d => d.title),
-        padding: 0.1,
+        padding: 0.2,
         range: [0, height],
     })
     const typeScale = scaleBand({
@@ -42,7 +42,7 @@ export function EnjoymentChart({
     });
     const colorScale = scaleOrdinal<string, string>({
         domain: ['experience', 'enjoyment'],
-        range: ['#4fa7e8', '#c0daed'],
+        range: ['#44403C', '#CA685B'],
     });
 
     return (
@@ -59,7 +59,7 @@ export function EnjoymentChart({
                         y1Scale={typeScale}
                         xScale={valueScale}
                         color={colorScale}
-                        
+
                     >
                         {(barGroups) => (
                             barGroups.map(barGroup => (
@@ -75,13 +75,14 @@ export function EnjoymentChart({
                                             width={bar.width}
                                             height={bar.height}
                                             fill={bar.color}
+                                            className="rounded-r"
                                         />
                                     ))}
                                 </Group>
                             ))
                         )}
                     </BarGroupHorizontal>
-                    <AxisLeft 
+                    <AxisLeft
                         scale={nameScale}
                         hideAxisLine
                         tickFormat={(value) => value.toString()}
